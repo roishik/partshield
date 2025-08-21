@@ -4,31 +4,39 @@ const testimonials = [
   {
     name: "John M.",
     location: "Arizona • Shop Owner",
-    content: "I run a 20-man machine shop. Scrap used to kill my margins. With PartShield, I finally bid without padding my prices.",
+    content:
+      "I run a 20-man machine shop. Scrap used to kill my margins. With PartShield, I finally bid without padding my prices.",
     timeAgo: "2 weeks ago",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
   },
   {
     name: "Maria R.",
-    location: "Ohio • Shop Owner",
-    content: "We used to lose jobs to bigger shops because our quotes were higher. PartShield gave us the confidence to go leaner.",
+    location: "Ohio • Production Manager",
+    content:
+      "We used to lose jobs to bigger shops because our quotes were higher. PartShield gave us the confidence to go leaner.",
     timeAgo: "1 month ago",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+    avatar:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
   },
   {
     name: "Dave T.",
-    location: "Michigan • Shop Owner",
-    content: "Unexpected scrap always hit our cash flow. Now, we can plan projects knowing our revenue is safe.",
+    location: "Michigan • Operations Director",
+    content:
+      "Unexpected scrap always hit our cash flow. Now, we can plan projects knowing our revenue is safe.",
     timeAgo: "3 weeks ago",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
+    avatar:
+      "https://images.unsplash.com/photo-1734434570358-21badf4ba1c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Ethan L.",
-    location: "Texas • Shop Owner",
-    content: "Insurance for scrap sounded strange at first, but it works. Our quoting is sharper and we've landed more repeat clients.",
+    location: "Texas • Workshop Manager",
+    content:
+      "Insurance for scrap sounded strange at first, but it works. Our quoting is sharper and we've landed more repeat clients.",
     timeAgo: "2 months ago",
-    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
-  }
+    avatar:
+      "https://images.unsplash.com/photo-1672748341520-6a839e6c05bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
 ];
 
 export default function Testimonials() {
@@ -40,22 +48,30 @@ export default function Testimonials() {
             What Shop Owners Are Saying
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-steel-500">
-            Real reviews from machine shop owners who transformed their business with PartShield
+            Real reviews from machine shop owners who transformed their business
+            with PartShield
           </p>
         </div>
-        
+
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white border border-slate-200 rounded-lg shadow-sm p-6">
+            <div
+              key={index}
+              className="bg-white border border-slate-200 rounded-lg shadow-sm p-6"
+            >
               <div className="flex items-center mb-4">
-                <img 
-                  src={testimonial.avatar} 
-                  alt={`${testimonial.name} - Shop Owner`} 
+                <img
+                  src={testimonial.avatar}
+                  alt={`${testimonial.name} - Shop Owner`}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div className="ml-3">
-                  <div className="text-sm font-medium text-steel-900">{testimonial.name}</div>
-                  <div className="text-sm text-steel-500">{testimonial.location}</div>
+                  <div className="text-sm font-medium text-steel-900">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-steel-500">
+                    {testimonial.location}
+                  </div>
                 </div>
                 <div className="ml-auto flex items-center">
                   <div className="flex text-yellow-400">
@@ -65,9 +81,7 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-              <p className="text-steel-600">
-                "{testimonial.content}"
-              </p>
+              <p className="text-steel-600">"{testimonial.content}"</p>
               <div className="mt-4 text-xs text-steel-400 flex items-center">
                 <Clock className="h-3 w-3 mr-1" />
                 {testimonial.timeAgo}

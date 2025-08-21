@@ -17,16 +17,19 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                   <div className="py-12 lg:py-24">
                     <h1 className="text-4xl tracking-tight font-extrabold text-steel-900 sm:text-5xl md:text-6xl">
                       <span className="block">Protect Your Margins.</span>
-                      <span className="block text-growth-600">Win More Jobs.</span>
+                      <span className="block text-growth-600">
+                        Win More Jobs.
+                      </span>
                     </h1>
                     <p className="mt-3 text-base text-steel-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                      Insurance for scrap and rework—so you can quote with confidence and grow your shop.
+                      Insurance for scrap and rework—so you can quote with
+                      confidence and grow your shop.
                     </p>
-                    
+
                     {/* Hero CTAs */}
                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                       <div className="rounded-md shadow">
-                        <button 
+                        <button
                           onClick={onRequestCall}
                           className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-growth-600 hover:bg-growth-700 md:py-4 md:text-lg md:px-10 transition-colors"
                         >
@@ -34,7 +37,7 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                         </button>
                       </div>
                       <div className="mt-3 sm:mt-0 sm:ml-3">
-                        <button 
+                        <button
                           onClick={onRequestDemo}
                           className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-growth-700 bg-growth-100 hover:bg-growth-200 md:py-4 md:text-lg md:px-10 transition-colors"
                         >
@@ -42,7 +45,7 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                         </button>
                       </div>
                     </div>
-                    
+
                     {/* Trust Indicators */}
                     <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-steel-500">
                       <div className="flex items-center">
@@ -56,21 +59,25 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Hero Image */}
                 <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
                   <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-                    <img 
-                      src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-                      alt="Modern CNC machine shop floor with precision manufacturing equipment and control panels" 
+                    <img
+                      src="https://images.unsplash.com/photo-1598299803204-b73796f43289?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Modern CNC machine shop floor with precision manufacturing equipment and control panels"
                       className="w-full rounded-lg shadow-lg"
                     />
-                    
+
                     {/* Overlay Text Box */}
                     <div className="absolute bottom-4 left-4 right-4 bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
                       <div className="text-center">
-                        <div className="text-lg font-semibold text-steel-900">Your Shop, Protected</div>
-                        <div className="text-sm text-steel-600 mt-1">Insurance-backed peace of mind</div>
+                        <div className="text-lg font-semibold text-steel-900">
+                          Your Shop, Protected
+                        </div>
+                        <div className="text-sm text-steel-600 mt-1">
+                          Insurance-backed peace of mind
+                        </div>
                       </div>
                     </div>
                   </div>
