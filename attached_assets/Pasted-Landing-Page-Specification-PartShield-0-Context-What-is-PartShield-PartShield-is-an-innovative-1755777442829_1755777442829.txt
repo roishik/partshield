@@ -1,0 +1,121 @@
+Landing Page Specification – PartShield
+0. Context: What is PartShield?
+
+PartShield is an innovative insurance product designed specifically for small and medium-sized machine shops. Every machining operation faces uncertainty from scrap, rework, and tolerance failures. These failures force shops to produce extra parts, adding hidden costs that eat into margins. To protect themselves, many shops inflate their bids with extra markup—only to lose jobs to more aggressive competitors.
+
+PartShield solves this by insuring the financial impact of scrap and rework. Instead of carrying the burden of unpredictable losses, shop owners can transfer that risk to PartShield. This means they can quote jobs more competitively, reduce or eliminate unnecessary markups, and still be confident that their bottom line is protected.
+
+The result is greater clarity and stability for workshop owners: predictable project revenue, stronger cash flow, and a competitive advantage in winning new business. PartShield transforms quality failures from an unpredictable financial hit into a manageable, insured cost—unlocking growth for ambitious manufacturers.
+
+1. Objective
+
+Landing page to promote PartShield, an insurance product for medium-sized machine shops.
+Goal: generate leads via “Request a Call” and “Ask for a Demo.”
+Distribution: primarily through LinkedIn Ads.
+
+2. Target Audience
+
+Owners / managers of machining and fabrication shops (20–200 employees).
+
+Primary needs: protect against financial impact of scrap/rework, stabilize revenue, and win more bids.
+
+3. Messaging Framework
+Hero Section
+
+Headline: “Protect Your Margins. Win More Jobs.”
+
+Sub-headline: “Insurance for scrap and rework—so you can quote with confidence and grow your shop.”
+
+CTA Buttons: Request a Call (primary), Ask for a Demo (secondary).
+
+Visual: Machine shop floor with overlay text “Stable Margins | Predictable Revenue.”
+
+Problem → Solution Section
+
+Narrative:
+“Every shop loses parts to scrap and rework. To cover the risk, you add markup—then lose bids.
+With PartShield, you insure against quality failures so you can quote competitively, protect your bottom line, and win more projects.”
+
+Icons/Visual Blocks:
+
+Pain: Scrap → Costs.
+
+Pain: Markup → Lost Jobs.
+
+Solution: Insurance → Predictability & Growth.
+
+How It Works Section
+
+You quote a project.
+
+PartShield covers financial risk of scrap and rework.
+
+You deliver confidently, with stable margins.
+
+Value Proposition Deep Dive
+
+Clarity: No more guessing about hidden costs.
+
+Stability: Predictable project revenue.
+
+Growth: More competitive bids → more wins.
+
+Trust: Insurance-grade protection backed by experts.
+
+Data Hook (visual chart):
+“On average, manufacturers lose 5–20% of parts to scrap and rework.
+With PartShield, those losses don’t eat into your margins.”
+
+Social Proof (reviews styled like Facebook cards)
+
+John M., Arizona – “I run a 20-man machine shop. Scrap used to kill my margins. With PartShield, I finally bid without padding my prices.”
+
+Maria R., Ohio – “We used to lose jobs to bigger shops because our quotes were higher. PartShield gave us the confidence to go leaner.”
+
+Dave T., Michigan – “Unexpected scrap always hit our cash flow. Now, we can plan projects knowing our revenue is safe.”
+
+Ethan L., Texas – “Insurance for scrap sounded strange at first, but it works. Our quoting is sharper and we’ve landed more repeat clients.”
+
+(Use generic profile pics, names + shop owner tag for authenticity.)
+
+FAQ Section
+
+Examples:
+
+“What happens if I scrap 20% of a batch?”
+
+“Will this slow down my quoting process?”
+
+“Is this insurance or a guarantee?”
+
+Closing CTA Banner
+
+Headline: “Start winning more jobs—without risking your margins.”
+
+Buttons: Request a Call | Ask for a Demo
+
+4. Design / UI Notes
+
+Clean, industrial design: gray/steel tones, with green accents (stability, growth).
+
+CTA buttons consistent and visible in at least 3 locations (hero, mid-page, footer).
+
+Use graphs/illustrations (e.g., fluctuating vs stable margins).
+
+Social proof designed like Facebook review cards (with star ratings).
+
+5. Technical Requirements
+
+Lead form: Name, Company, Email, Phone, (optional) Monthly Project Volume.
+
+Tracking: LinkedIn Pixel + Google Analytics.
+
+Thank-you page with Calendly or scheduling link.
+
+6. Deliverables
+
+Landing page with ~6 content sections.
+
+Responsive mobile + desktop layout.
+
+Integration with CRM/email follow-up system.
