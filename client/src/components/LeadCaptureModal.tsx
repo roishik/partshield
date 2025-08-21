@@ -3,7 +3,13 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -14,20 +20,24 @@ import { useLocation } from "wouter";
 interface LeadCaptureModalProps {
   isOpen: boolean;
   onClose: () => void;
-  type: 'call' | 'demo';
+  type: "call" | "demo";
 }
 
-export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureModalProps) {
+export default function LeadCaptureModal({
+  isOpen,
+  onClose,
+  type,
+}: LeadCaptureModalProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    volume: '',
-    role: '',
-    companySize: '',
-    useCases: '',
-    requestType: type
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    volume: "",
+    role: "",
+    companySize: "",
+    useCases: "",
+    requestType: type,
   });
 
   const { toast } = useToast();
@@ -36,39 +46,43 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
 
   const submitLead = useMutation({
     mutationFn: async (data: typeof formData) => {
-      const response = await apiRequest('POST', '/api/leads', data);
+      const response = await apiRequest("POST", "/api/leads", data);
       return response.json();
     },
     onSuccess: () => {
       // Track conversion event
-      trackEvent(type === 'call' ? 'request_call' : 'request_demo', 'lead_generation', 'modal_form');
-      
+      trackEvent(
+        type === "call" ? "request_call" : "request_demo",
+        "lead_generation",
+        "modal_form",
+      );
+
       // Invalidate leads cache
-      queryClient.invalidateQueries({ queryKey: ['/api/leads'] });
-      
+      queryClient.invalidateQueries({ queryKey: ["/api/leads"] });
+
       // Show success message
       toast({
         title: "Thank you!",
         description: `We've received your ${type} request and will contact you within 24 hours.`,
       });
-      
+
       // Close modal and redirect
       onClose();
-      setLocation('/thank-you');
+      setLocation("/thank-you");
     },
     onError: (error) => {
-      console.error('Error submitting lead:', error);
+      console.error("Error submitting lead:", error);
       toast({
         title: "Error",
         description: "Failed to submit your request. Please try again.",
         variant: "destructive",
       });
-    }
+    },
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validation for both forms - name, email, phone are always required
     if (!formData.name || !formData.email || !formData.phone) {
       toast({
@@ -80,7 +94,7 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
     }
 
     // For demo requests, company is required
-    if (type === 'demo' && !formData.company) {
+    if (type === "demo" && !formData.company) {
       toast({
         title: "Missing Information",
         description: "Company is required for demo requests.",
@@ -110,7 +124,10 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
     }
 
     // Validate use cases length (max 400 words)
-    if (formData.useCases && formData.useCases.trim().split(/\s+/).length > 400) {
+    if (
+      formData.useCases &&
+      formData.useCases.trim().split(/\s+/).length > 400
+    ) {
       toast({
         title: "Use Cases Too Long",
         description: "Use cases should be limited to 400 words.",
@@ -123,7 +140,7 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   if (!isOpen) return null;
@@ -133,16 +150,16 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
       <div className="bg-white rounded-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-steel-900">
-            {type === 'call' ? 'Request a Call' : 'Ask for a Demo'}
+            {type === "call" ? "Request a Call" : "Ask for a Demo"}
           </h3>
-          <button 
+          <button
             onClick={onClose}
             className="text-steel-400 hover:text-steel-600"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
-        
+
         <form onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
@@ -152,28 +169,28 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
                 type="text"
                 required
                 value={formData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
+                onChange={(e) => handleInputChange("name", e.target.value)}
                 placeholder="John Smith"
-                className="mt-1"
+                className="mt-1 placeholder:text-gray-400"
               />
             </div>
-            
+
             <div>
               <Label htmlFor="company">
-                Company {type === 'demo' ? '*' : '(Optional)'}
+                Company {type === "demo" ? "*" : "(Optional)"}
               </Label>
               <Input
                 id="company"
                 type="text"
-                required={type === 'demo'}
+                required={type === "demo"}
                 value={formData.company}
-                onChange={(e) => handleInputChange('company', e.target.value)}
+                onChange={(e) => handleInputChange("company", e.target.value)}
                 placeholder="ABC Manufacturing"
-                className="mt-1"
+                className="mt-1 placeholder:text-gray-400"
               />
             </div>
 
-            {type === 'demo' && (
+            {type === "demo" && (
               <>
                 <div>
                   <Label htmlFor="role">Role (Optional)</Label>
@@ -181,30 +198,36 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
                     id="role"
                     type="text"
                     value={formData.role}
-                    onChange={(e) => handleInputChange('role', e.target.value)}
+                    onChange={(e) => handleInputChange("role", e.target.value)}
                     placeholder="Manufacturing Manager"
-                    className="mt-1"
+                    className="mt-1 placeholder:text-gray-400"
                     maxLength={100}
                   />
-                  <p className="text-xs text-gray-500 mt-1">Limited to 10 words</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Limited to 10 words
+                  </p>
                 </div>
-                
+
                 <div>
                   <Label htmlFor="companySize">Company Size (Optional)</Label>
                   <Input
                     id="companySize"
                     type="text"
                     value={formData.companySize}
-                    onChange={(e) => handleInputChange('companySize', e.target.value)}
-                    placeholder="50"
-                    className="mt-1"
+                    onChange={(e) =>
+                      handleInputChange("companySize", e.target.value)
+                    }
+                    placeholder="1-500"
+                    className="mt-1 placeholder:text-gray-400"
                     pattern="[0-9]*"
                   />
-                  <p className="text-xs text-gray-500 mt-1">Number of employees</p>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Number of employees
+                  </p>
                 </div>
               </>
             )}
-            
+
             <div>
               <Label htmlFor="email">Email *</Label>
               <Input
@@ -212,12 +235,12 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
+                onChange={(e) => handleInputChange("email", e.target.value)}
                 placeholder="john@abcmfg.com"
-                className="mt-1"
+                className="mt-1 placeholder:text-gray-400"
               />
             </div>
-            
+
             <div>
               <Label htmlFor="phone">Phone *</Label>
               <Input
@@ -225,16 +248,20 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
                 type="tel"
                 required
                 value={formData.phone}
-                onChange={(e) => handleInputChange('phone', e.target.value)}
-                placeholder="(555) 123-4567"
-                className="mt-1"
+                onChange={(e) => handleInputChange("phone", e.target.value)}
+                placeholder="+1 (555) 123-4567"
+                className="mt-1 placeholder:text-gray-400"
               />
             </div>
-            
-            {type === 'demo' && (
+
+            {type === "demo" && (
               <div>
-                <Label htmlFor="volume">Monthly Project Volume (Optional)</Label>
-                <Select onValueChange={(value) => handleInputChange('volume', value)}>
+                <Label htmlFor="volume">
+                  Monthly Project Volume (Optional)
+                </Label>
+                <Select
+                  onValueChange={(value) => handleInputChange("volume", value)}
+                >
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Select range" />
                   </SelectTrigger>
@@ -248,32 +275,43 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
               </div>
             )}
 
-            {type === 'demo' && (
+            {type === "demo" && (
               <div>
-                <Label htmlFor="useCases">What are the use cases PartShield can help you with? (Optional)</Label>
+                <Label htmlFor="useCases">
+                  What are the use cases PartShield can help you with?
+                  (Optional)
+                </Label>
                 <Textarea
                   id="useCases"
                   value={formData.useCases}
-                  onChange={(e) => handleInputChange('useCases', e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("useCases", e.target.value)
+                  }
                   placeholder="Describe how PartShield can help with your specific manufacturing challenges..."
-                  className="mt-1 min-h-[100px]"
+                  className="mt-1 placeholder:text-gray-400"
                   rows={4}
                 />
-                <p className="text-xs text-gray-500 mt-1">Limited to 400 words</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Limited to 400 words
+                </p>
               </div>
             )}
           </div>
-          
+
           <div className="mt-6 flex space-x-3">
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               disabled={submitLead.isPending}
               className="flex-1 bg-growth-600 hover:bg-growth-700"
             >
-              {submitLead.isPending ? 'Submitting...' : (type === 'call' ? 'Request Call' : 'Request Demo')}
+              {submitLead.isPending
+                ? "Submitting..."
+                : type === "call"
+                  ? "Request Call"
+                  : "Request Demo"}
             </Button>
-            <Button 
-              type="button" 
+            <Button
+              type="button"
               variant="outline"
               onClick={onClose}
               className="flex-1"
