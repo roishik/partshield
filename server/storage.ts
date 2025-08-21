@@ -1,4 +1,6 @@
-import { type User, type InsertUser, type Lead, type InsertLead } from "@shared/schema";
+import { users, type User, type InsertUser, leads, type Lead, type InsertLead } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -9,53 +11,39 @@ export interface IStorage {
   getAllLeads(): Promise<Lead[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private leads: Map<string, Lead>;
-
-  constructor() {
-    this.users = new Map();
-    this.leads = new Map();
-  }
+export class DatabaseStorage implements IStorage {
+  constructor() {}
 
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createLead(insertLead: InsertLead): Promise<Lead> {
-    const id = randomUUID();
-    const lead: Lead = { 
-      ...insertLead, 
-      id, 
-      createdAt: new Date(),
-      company: insertLead.company ?? null,
-      volume: insertLead.volume ?? null,
-      role: insertLead.role ?? null,
-      companySize: insertLead.companySize ?? null,
-      useCases: insertLead.useCases ?? null
-    };
-    this.leads.set(id, lead);
+    const [lead] = await db
+      .insert(leads)
+      .values(insertLead)
+      .returning();
     return lead;
   }
 
   async getAllLeads(): Promise<Lead[]> {
-    return Array.from(this.leads.values()).sort(
-      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
-    );
+    const allLeads = await db.select().from(leads).orderBy(leads.createdAt);
+    return allLeads.reverse();
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();

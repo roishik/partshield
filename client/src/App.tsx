@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Landing from "@/pages/landing";
 import ThankYou from "@/pages/thank-you";
+import Admin from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
@@ -18,6 +19,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path="/thank-you" component={ThankYou} />
+      <Route path="/admin" component={Admin} />
       <Route component={NotFound} />
     </Switch>
   );
