@@ -12,10 +12,13 @@ export const users = pgTable("users", {
 export const leads = pgTable("leads", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
-  company: text("company").notNull(),
+  company: text("company"),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
   volume: text("volume"),
+  role: text("role"),
+  companySize: text("company_size"),
+  useCases: text("use_cases"),
   requestType: text("request_type").notNull(), // 'call' or 'demo'
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });

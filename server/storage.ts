@@ -41,7 +41,11 @@ export class MemStorage implements IStorage {
       ...insertLead, 
       id, 
       createdAt: new Date(),
-      volume: insertLead.volume ?? null
+      company: insertLead.company ?? null,
+      volume: insertLead.volume ?? null,
+      role: insertLead.role ?? null,
+      companySize: insertLead.companySize ?? null,
+      useCases: insertLead.useCases ?? null
     };
     this.leads.set(id, lead);
     return lead;

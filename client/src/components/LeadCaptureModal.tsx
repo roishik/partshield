@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -23,6 +24,9 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
     email: '',
     phone: '',
     volume: '',
+    role: '',
+    companySize: '',
+    useCases: '',
     requestType: type
   });
 
@@ -65,10 +69,51 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.company || !formData.email || !formData.phone) {
+    // Validation for both forms - name, email, phone are always required
+    if (!formData.name || !formData.email || !formData.phone) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // For demo requests, company is required
+    if (type === 'demo' && !formData.company) {
+      toast({
+        title: "Missing Information",
+        description: "Company is required for demo requests.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate role length (max 10 words)
+    if (formData.role && formData.role.trim().split(/\s+/).length > 10) {
+      toast({
+        title: "Role Too Long",
+        description: "Role should be limited to 10 words.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate company size is numbers only
+    if (formData.companySize && !/^\d+$/.test(formData.companySize)) {
+      toast({
+        title: "Invalid Company Size",
+        description: "Company size should contain numbers only.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate use cases length (max 400 words)
+    if (formData.useCases && formData.useCases.trim().split(/\s+/).length > 400) {
+      toast({
+        title: "Use Cases Too Long",
+        description: "Use cases should be limited to 400 words.",
         variant: "destructive",
       });
       return;
@@ -85,7 +130,7 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-md w-full p-6 relative">
+      <div className="bg-white rounded-lg max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-steel-900">
             {type === 'call' ? 'Request a Call' : 'Ask for a Demo'}
@@ -114,17 +159,51 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
             </div>
             
             <div>
-              <Label htmlFor="company">Company *</Label>
+              <Label htmlFor="company">
+                Company {type === 'demo' ? '*' : '(Optional)'}
+              </Label>
               <Input
                 id="company"
                 type="text"
-                required
+                required={type === 'demo'}
                 value={formData.company}
                 onChange={(e) => handleInputChange('company', e.target.value)}
                 placeholder="ABC Manufacturing"
                 className="mt-1"
               />
             </div>
+
+            {type === 'demo' && (
+              <>
+                <div>
+                  <Label htmlFor="role">Role (Optional)</Label>
+                  <Input
+                    id="role"
+                    type="text"
+                    value={formData.role}
+                    onChange={(e) => handleInputChange('role', e.target.value)}
+                    placeholder="Manufacturing Manager"
+                    className="mt-1"
+                    maxLength={100}
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Limited to 10 words</p>
+                </div>
+                
+                <div>
+                  <Label htmlFor="companySize">Company Size (Optional)</Label>
+                  <Input
+                    id="companySize"
+                    type="text"
+                    value={formData.companySize}
+                    onChange={(e) => handleInputChange('companySize', e.target.value)}
+                    placeholder="50"
+                    className="mt-1"
+                    pattern="[0-9]*"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Number of employees</p>
+                </div>
+              </>
+            )}
             
             <div>
               <Label htmlFor="email">Email *</Label>
@@ -152,20 +231,37 @@ export default function LeadCaptureModal({ isOpen, onClose, type }: LeadCaptureM
               />
             </div>
             
-            <div>
-              <Label htmlFor="volume">Monthly Project Volume (Optional)</Label>
-              <Select onValueChange={(value) => handleInputChange('volume', value)}>
-                <SelectTrigger className="mt-1">
-                  <SelectValue placeholder="Select range" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="under-50k">Under $50K</SelectItem>
-                  <SelectItem value="50k-200k">$50K - $200K</SelectItem>
-                  <SelectItem value="200k-500k">$200K - $500K</SelectItem>
-                  <SelectItem value="over-500k">Over $500K</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            {type === 'demo' && (
+              <div>
+                <Label htmlFor="volume">Monthly Project Volume (Optional)</Label>
+                <Select onValueChange={(value) => handleInputChange('volume', value)}>
+                  <SelectTrigger className="mt-1">
+                    <SelectValue placeholder="Select range" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="under-50k">Under $50K</SelectItem>
+                    <SelectItem value="50k-200k">$50K - $200K</SelectItem>
+                    <SelectItem value="200k-500k">$200K - $500K</SelectItem>
+                    <SelectItem value="over-500k">Over $500K</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            {type === 'demo' && (
+              <div>
+                <Label htmlFor="useCases">What are the use cases PartShield can help you with? (Optional)</Label>
+                <Textarea
+                  id="useCases"
+                  value={formData.useCases}
+                  onChange={(e) => handleInputChange('useCases', e.target.value)}
+                  placeholder="Describe how PartShield can help with your specific manufacturing challenges..."
+                  className="mt-1 min-h-[100px]"
+                  rows={4}
+                />
+                <p className="text-xs text-gray-500 mt-1">Limited to 400 words</p>
+              </div>
+            )}
           </div>
           
           <div className="mt-6 flex space-x-3">
