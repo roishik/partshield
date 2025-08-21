@@ -8,7 +8,7 @@ const testimonials = [
       "I run a 20-man machine shop. Scrap used to kill my margins. With PartShield, I finally bid without padding my prices.",
     timeAgo: "2 weeks ago",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      "https://sdmntpreastus.oaiusercontent.com/files/00000000-c208-61f9-a637-4658437d0e63/raw?se=2025-08-21T15%3A12%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=45f363b3-9d48-552d-b968-5937a5375685&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-20T20%3A54%3A13Z&ske=2025-08-21T20%3A54%3A13Z&sks=b&skv=2024-08-04&sig=eDoaezjXX5F8X2DZM%2BDaPRsr07HRR2i6ieWTrPkovFI%3D",
   },
   {
     name: "Maria R.",
@@ -17,7 +17,7 @@ const testimonials = [
       "We used to lose jobs to bigger shops because our quotes were higher. PartShield gave us the confidence to go leaner.",
     timeAgo: "1 month ago",
     avatar:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      "https://sdmntpreastus2.oaiusercontent.com/files/00000000-5648-61f6-8fb7-760c4f3bf372/raw?se=2025-08-21T15%3A17%3A41Z&sp=r&sv=2024-08-04&sr=b&scid=d8ae5e27-3e1c-546f-b1e4-cf6b30894234&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-20T20%3A54%3A06Z&ske=2025-08-21T20%3A54%3A06Z&sks=b&skv=2024-08-04&sig=C5mqKgLesqjm0X5cQVOgmjt9WxrOnDOxO3/JOsUIlqQ%3D",
   },
   {
     name: "Dave T.",
@@ -26,7 +26,7 @@ const testimonials = [
       "Unexpected scrap always hit our cash flow. Now, we can plan projects knowing our revenue is safe.",
     timeAgo: "3 weeks ago",
     avatar:
-      "https://images.unsplash.com/photo-1734434570358-21badf4ba1c6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://sdmntpreastus.oaiusercontent.com/files/00000000-c208-61f9-a637-4658437d0e63/raw?se=2025-08-21T15%3A12%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=45f363b3-9d48-552d-b968-5937a5375685&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-20T20%3A54%3A13Z&ske=2025-08-21T20%3A54%3A13Z&sks=b&skv=2024-08-04&sig=eDoaezjXX5F8X2DZM%2BDaPRsr07HRR2i6ieWTrPkovFI%3D",
   },
   {
     name: "Ethan L.",
@@ -35,7 +35,7 @@ const testimonials = [
       "Insurance for scrap sounded strange at first, but it works. Our quoting is sharper and we've landed more repeat clients.",
     timeAgo: "2 months ago",
     avatar:
-      "https://images.unsplash.com/photo-1672748341520-6a839e6c05bb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://sdmntpreastus.oaiusercontent.com/files/00000000-c208-61f9-a637-4658437d0e63/raw?se=2025-08-21T15%3A12%3A52Z&sp=r&sv=2024-08-04&sr=b&scid=45f363b3-9d48-552d-b968-5937a5375685&skoid=a3412ad4-1a13-47ce-91a5-c07730964f35&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-20T20%3A54%3A13Z&ske=2025-08-21T20%3A54%3A13Z&sks=b&skv=2024-08-04&sig=eDoaezjXX5F8X2DZM%2BDaPRsr07HRR2i6ieWTrPkovFI%3D",
   },
 ];
 

@@ -4,20 +4,24 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "What happens if I scrap 20% of a batch?",
-    answer: "PartShield covers the material and labor costs associated with scrapped parts. If you scrap 20% of a batch, we'll reimburse you for those costs according to your policy terms, protecting your project margins."
+    answer:
+      "PartShield covers the material and labor costs associated with scrapped parts. If you scrap 20% of a batch, we'll reimburse you for those costs according to your policy terms, protecting your project margins. You can also choose your coverage limits, ranging from 10% to 100%, so the protection matches the risk profile of your shop.",
   },
   {
     question: "Will this slow down my quoting process?",
-    answer: "Not at all. PartShield integrates seamlessly into your existing workflow. Simply include coverage in your quote - it takes less than 5 minutes to add protection to any project."
+    answer:
+      "Not at all. PartShield integrates seamlessly into your existing workflow. Simply include coverage in your quote - it takes less than 5 minutes to add protection to any project.",
   },
   {
     question: "Is this insurance or a guarantee?",
-    answer: "PartShield is insurance coverage specifically designed for manufacturing quality failures. Unlike warranties or guarantees, we focus on protecting your financial exposure to scrap and rework costs, not the end product performance."
+    answer:
+      "PartShield is insurance coverage specifically designed for manufacturing quality failures. Unlike warranties or guarantees, we focus on protecting your financial exposure to scrap and rework costs, not the end product performance.",
   },
   {
     question: "What types of shops qualify for coverage?",
-    answer: "PartShield is designed for small to medium-sized machine shops (20-200 employees) involved in precision manufacturing, CNC machining, and fabrication work. Contact us to discuss your specific operation."
-  }
+    answer:
+      "PartShield is designed for small to medium-sized machine shops (20-200 employees) involved in precision manufacturing, CNC machining, and fabrication work. Contact us to discuss your specific operation.",
+  },
 ];
 
 export default function FAQ() {
@@ -38,11 +42,14 @@ export default function FAQ() {
             Get answers to common questions about PartShield coverage
           </p>
         </div>
-        
+
         <div className="mt-12 space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white border border-slate-200 rounded-lg shadow-sm">
-              <button 
+            <div
+              key={index}
+              className="bg-white border border-slate-200 rounded-lg shadow-sm"
+            >
+              <button
                 className="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-growth-500"
                 onClick={() => toggleFAQ(index)}
               >
@@ -50,18 +57,16 @@ export default function FAQ() {
                   <h3 className="text-lg font-medium text-steel-900">
                     {faq.question}
                   </h3>
-                  <ChevronDown 
+                  <ChevronDown
                     className={`text-steel-400 h-5 w-5 transform transition-transform ${
-                      openIndex === index ? 'rotate-180' : ''
+                      openIndex === index ? "rotate-180" : ""
                     }`}
                   />
                 </div>
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-4">
-                  <p className="text-steel-600">
-                    {faq.answer}
-                  </p>
+                  <p className="text-steel-600">{faq.answer}</p>
                 </div>
               )}
             </div>
