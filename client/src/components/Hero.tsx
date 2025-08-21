@@ -61,7 +61,7 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                 <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
                   <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
                     <img 
-                      src="attached_assets/Machine_Shop_Illu_1755778844036.png" 
+                      src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                       alt="Modern CNC machine shop floor with precision manufacturing equipment and control panels" 
                       className="w-full rounded-lg shadow-lg"
                     />
