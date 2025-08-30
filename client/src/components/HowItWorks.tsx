@@ -12,7 +12,7 @@ export default function HowItWorks() {
             Three simple steps to protect your margins and grow your business
           </p>
         </div>
-        
+
         <div className="mt-16">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {/* Step 1 */}
@@ -20,41 +20,51 @@ export default function HowItWorks() {
               <div className="flex items-center justify-center w-20 h-20 mx-auto bg-growth-100 rounded-full mb-6">
                 <span className="text-2xl font-bold text-growth-600">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-steel-900 mb-4">You Quote a Project</h3>
+              <h3 className="text-xl font-semibold text-steel-900 mb-4">
+                You Quote a Project
+              </h3>
               <p className="text-steel-600">
-                Submit your project details and get PartShield coverage. Quote competitively without padding for scrap risk.
+                Submit your production order details and get PartShield
+                coverage. Quote competitively without padding for defect, scrap,
+                or recall risk.
               </p>
             </div>
-            
+
             {/* Arrow */}
             <div className="hidden sm:flex items-center justify-center">
               <ArrowRight className="text-growth-500 h-8 w-8" />
             </div>
-            
+
             {/* Step 2 */}
             <div className="text-center">
               <div className="flex items-center justify-center w-20 h-20 mx-auto bg-growth-100 rounded-full mb-6">
                 <span className="text-2xl font-bold text-growth-600">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-steel-900 mb-4">PartShield Covers Risk</h3>
+              <h3 className="text-xl font-semibold text-steel-900 mb-4">
+                PartShield Covers Risk
+              </h3>
               <p className="text-steel-600">
-                We handle the financial impact of scrap and rework, so quality failures don't affect your bottom line.
+                We handle the financial impact of scrap and rework, so quality
+                failures don't affect your bottom line.
               </p>
             </div>
-            
+
             {/* Arrow */}
             <div className="hidden sm:flex items-center justify-center">
               <ArrowRight className="text-growth-500 h-8 w-8" />
             </div>
-            
+
             {/* Step 3 */}
             <div className="text-center">
               <div className="flex items-center justify-center w-20 h-20 mx-auto bg-growth-100 rounded-full mb-6">
                 <span className="text-2xl font-bold text-growth-600">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-steel-900 mb-4">Deliver Confidently</h3>
+              <h3 className="text-xl font-semibold text-steel-900 mb-4">
+                Deliver Confidently
+              </h3>
               <p className="text-steel-600">
-                Complete projects with stable margins and predictable revenue, knowing you're protected against quality failures.
+                Complete projects with stable margins and predictable revenue,
+                knowing you're protected against quality failures.
               </p>
             </div>
           </div>

@@ -22,8 +22,9 @@ export default function Hero({ onRequestCall, onRequestDemo }: HeroProps) {
                       </span>
                     </h1>
                     <p className="mt-3 text-base text-steel-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                      Insurance for scrap and rework - so you can quote with
-                      confidence and grow your shop.
+                      Insurance for scrap, rework, and production defects - so
+                      you can quote jobs with confidence and keep lines running
+                      profitably.
                       <br />
                       It's not just buying insurance, it's your lever of growth.
                     </p>
