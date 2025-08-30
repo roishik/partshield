@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     name: "Maria R.",
-    location: "Ohio • Shop Owner",
+    location: "Ohio • Production Manager",
     content:
       "With high-volume production orders, even small defect rates meant big losses. PartShield covers our internal quality failures so our margins stay protected.",
     timeAgo: "1 month ago",
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     name: "Dave T.",
-    location: "Michigan • Shop Owner",
+    location: "Michigan • Operations Director",
     content:
       "Production line quality control used to be a constant worry about costs. Now with PartShield covering internal rework, we can focus on winning more contracts.",
     timeAgo: "3 weeks ago",
@@ -30,7 +30,7 @@ const testimonials = [
   },
   {
     name: "Ethan L.",
-    location: "Texas • Shop Owner",
+    location: "Texas • Workshop Manager",
     content:
       "PartShield protects our margins from internal quality issues before delivery. Our production quoting is now more aggressive and we've grown our customer base.",
     timeAgo: "2 months ago",
