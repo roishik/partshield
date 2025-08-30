@@ -5,34 +5,34 @@ const testimonials = [
     name: "John M.",
     location: "Arizona • Shop Owner",
     content:
-      "I run a 20-man machine shop. Scrap used to kill my margins. With PartShield, I finally bid without padding my prices.",
+      "Running production lines for automotive parts, quality issues used to destroy our margins. PartShield protects us from internal rework costs so we can bid competitively.",
     timeAgo: "2 weeks ago",
     avatar:
       "https://raw.githubusercontent.com/roishik/partshield/main/client/src/assets/man.png",
   },
   {
     name: "Maria R.",
-    location: "Ohio • Production Manager",
+    location: "Ohio • Shop Owner",
     content:
-      "We used to lose jobs to bigger shops because our quotes were higher. PartShield gave us the confidence to go leaner.",
+      "With high-volume production orders, even small defect rates meant big losses. PartShield covers our internal quality failures so our margins stay protected.",
     timeAgo: "1 month ago",
     avatar:
       "https://raw.githubusercontent.com/roishik/partshield/main/client/src/assets/woman.png",
   },
   {
     name: "Dave T.",
-    location: "Michigan • Operations Director",
+    location: "Michigan • Shop Owner",
     content:
-      "Unexpected scrap always hit our cash flow. Now, we can plan projects knowing our revenue is safe.",
+      "Production line quality control used to be a constant worry about costs. Now with PartShield covering internal rework, we can focus on winning more contracts.",
     timeAgo: "3 weeks ago",
     avatar:
       "https://raw.githubusercontent.com/roishik/partshield/main/client/src/assets/man.png",
   },
   {
     name: "Ethan L.",
-    location: "Texas • Workshop Manager",
+    location: "Texas • Shop Owner",
     content:
-      "Insurance for scrap sounded strange at first, but it works. Our quoting is sharper and we've landed more repeat clients.",
+      "PartShield protects our margins from internal quality issues before delivery. Our production quoting is now more aggressive and we've grown our customer base.",
     timeAgo: "2 months ago",
     avatar:
       "https://raw.githubusercontent.com/roishik/partshield/main/client/src/assets/man.png",
